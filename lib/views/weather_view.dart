@@ -101,14 +101,18 @@ class _WeatherViewState extends State<WeatherView> with TickerProviderStateMixin
                             return Padding(
                               padding: const EdgeInsets.only(right: 8.0),
                               child: ActionChip(
-                                backgroundColor: Colors.white.withValues(alpha: 0.2),
-                                side: BorderSide.none,
+                                backgroundColor: Colors.white.withValues(alpha: 0.25),
+                                side: BorderSide(color: Colors.white.withValues(alpha: 0.3), width: 1),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 label: Text(
                                   WeatherUtils.capitalize(city),
-                                  style: const TextStyle(color: Colors.white, fontSize: 13),
+                                  style: const TextStyle(
+                                    color: Color(0xFF1F1C2C), 
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
                                 onPressed: () {
                                   _cityController.text = city;
@@ -200,7 +204,6 @@ class _WeatherViewState extends State<WeatherView> with TickerProviderStateMixin
 
                                     const SizedBox(height: 20),
 
-                                    // LIGNE 1 : Ressenti & Vent (Structure responsive sans GridView)
                                     Row(
                                       children: [
                                         Expanded(
@@ -223,7 +226,6 @@ class _WeatherViewState extends State<WeatherView> with TickerProviderStateMixin
                                     
                                     const SizedBox(height: 10),
 
-                                    // LIGNE 2 : Humidité & Pression
                                     Row(
                                       children: [
                                         Expanded(
@@ -246,7 +248,6 @@ class _WeatherViewState extends State<WeatherView> with TickerProviderStateMixin
                                     
                                     const SizedBox(height: 10),
 
-                                    // LIGNE 3 : Lever & Coucher du soleil
                                     Row(
                                       children: [
                                         Expanded(

@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 class WeatherModel {
   final String cityName;
   final String country;
